@@ -6,7 +6,6 @@
 #include <functional> // hash
 
 #include <libstud/uuid/export.hxx>
-#include <libstud/uuid/version.hxx>
 
 #ifdef _WIN32
 struct _GUID; // GUID and UUID.
