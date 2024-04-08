@@ -6,7 +6,7 @@ namespace stud
   // NOTE: the order of definitions is important to MinGW GCC (DLL linkage).
 
   inline bool uuid::
-  nil () const
+  isNil () const
   {
     return
       time_low  == 0 &&
@@ -21,7 +21,7 @@ namespace stud
   inline uuid::
   operator bool () const
   {
-    return !nil ();
+    return !isNil ();
   }
 
   inline void uuid::
@@ -172,7 +172,7 @@ namespace stud
   inline uuid::variant_type uuid::
   variant () const
   {
-    return nil ()
+    return isNil ()
       ? variant_type::dce
       : ((clock_seq_hir & 0x80) == 0 ? variant_type::ncs :
          (clock_seq_hir & 0x40) == 0 ? variant_type::dce :
@@ -183,7 +183,7 @@ namespace stud
   inline uuid::version_type uuid::
   version () const
   {
-    return nil ()
+    return isNil ()
       ? version_type::random
       : static_cast<version_type> ((time_hiv >> 12) & 0x0f);
   }

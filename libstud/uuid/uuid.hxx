@@ -64,8 +64,7 @@ namespace stud
     //
     uuid () = default;
 
-    bool
-    nil () const;
+    bool isNil () const;
 
     explicit operator bool () const;
 
