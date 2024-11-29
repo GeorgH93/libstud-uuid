@@ -65,8 +65,14 @@ namespace stud
     //
     uuid () = default;
 
+    // nil is a keyword in objective-c
+#ifndef __OBJC__
     bool
     nil () const;
+#endif
+
+    bool
+    isNil () const;
 
     explicit operator bool () const;
 
