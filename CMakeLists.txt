@@ -14,6 +14,8 @@ set(MAIN_HEADER libstud/uuid.hxx)
 set(HEADERS
     libstud/uuid/uuid.hxx
     libstud/uuid/uuid-io.hxx
+    libstud/uuid/export.hxx
+    libstud/uuid/uuid.ixx
     ${CMAKE_CURRENT_BINARY_DIR}/libstud/uuid/version.hxx
 )
 
