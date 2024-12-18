@@ -14,16 +14,17 @@ struct _GUID; // GUID and UUID.
 
 namespace stud
 {
-  // Universally-unique identifier (UUID), RFC4122:
+  // Universally-unique identifier (UUID), RFC4122 & RFC9562:
   //
-  // https://tools.ietf.org/html/rfc4122
+  // https://datatracker.ietf.org/doc/html/rfc4122
+  // https://datatracker.ietf.org/doc/html/rfc9562
 
   // The UUID variant (type). Nil UUID is DCE.
   //
   enum class uuid_variant
   {
     ncs,       // NCS backward compatibility.
-    dce,       // DCE 1.1/RFC4122.
+    dce,       // DCE 1.1/RFC4122/RFC9562.
     microsoft, // Microsoft backward compatibility.
     other      // Currently reserved for possible future definition.
   };
@@ -32,11 +33,14 @@ namespace stud
   //
   enum class uuid_version
   {
-    time     = 1, // Time-based.
-    security = 2, // DCE Security with embedded POSIX UIDs.
-    md5      = 3, // Name-based with MD5 hashing.
-    random   = 4, // Randomly or pseudo-randomly generated.
-    sha1     = 5  // Name-based with SHA1 hashing.
+    time           = 1, // Time-based.
+    security       = 2, // DCE Security with embedded POSIX UIDs.
+    md5            = 3, // Name-based with MD5 hashing.
+    random         = 4, // Randomly or pseudo-randomly generated.
+    sha1           = 5, // Name-based with SHA1 hashing.
+    reordered_time = 6, // Sortable Time-based (RFC9562)
+    unix_time      = 7, // Privacy friendly time based (RFC9562)
+    custom         = 8, // Custom vendor specific (RFC9562)
   };
 
   class LIBSTUD_UUID_SYMEXPORT uuid_system_generator;
