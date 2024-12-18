@@ -1,4 +1,4 @@
-./: {*/ -build/} doc{README.md NEWS} legal{LICENSE AUTHORS} manifest
+./: {*/ -{build/ cmake/ cmake-build/}} doc{README.md NEWS} legal{LICENSE AUTHORS} manifest
 
 # Don't install tests.
 #
