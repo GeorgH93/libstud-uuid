@@ -38,9 +38,9 @@ namespace stud
     md5            = 3, // Name-based with MD5 hashing.
     random         = 4, // Randomly or pseudo-randomly generated.
     sha1           = 5, // Name-based with SHA1 hashing.
-    reordered_time = 6, // Sortable Time-based (RFC9562)
-    unix_time      = 7, // Privacy friendly time based (RFC9562)
-    custom         = 8, // Custom vendor specific (RFC9562)
+    reordered_time = 6, // Sortable time-based (RFC9562)
+    unix_time      = 7, // Unix epoch time based (RFC9562)
+    custom         = 8, // Custom format for experimental or vendor-specific use (RFC9562)
   };
 
   class LIBSTUD_UUID_SYMEXPORT uuid_system_generator;
